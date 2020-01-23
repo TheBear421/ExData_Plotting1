@@ -13,7 +13,7 @@ powerdata2<-na.omit(powerdata2)
 powerdata2$Date<-as.Date(powerdata2$Date, "%d/%m/%Y")
 powerdata2<-cbind(powerdata2, "DateTime"= as.POSIXct(paste(powerdata2$Date,powerdata2$Time)))
 
-#Now create the plot using with and lines to add the three different lines of different color.  Once it looks right, then pring to plot3.png.
+#Now create the plot using with and lines to add the three different lines of different color.  Once it looks right, then print to plot3.png.
 with(powerdata2, {plot(Sub_metering_1 ~ DateTime, type="l",xlab="",ylab="Energy Sub Metering")})
 lines(powerdata2$Sub_metering_2~ powerdata2$DateTime, type="l", col="red")
 lines(powerdata2$Sub_metering_3~ powerdata2$DateTime, type="l", col="blue")
